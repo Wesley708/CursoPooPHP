@@ -2,6 +2,17 @@
     class Login{
         private $email;
         private $senha;
+        private $nome;
+
+        public function __construct($email, $senha, $nome){
+            $this->nome = $nome;
+            $this->setEmail($email);
+            $this->setSenha($senha);
+        }
+
+        public function getNome(){
+            return $this->nome;
+        }
 
         public function getEmail(){
             return $this->email;
@@ -26,12 +37,12 @@
             endif;
         }
     }
-    $teste = new Login;
-    $teste->setEmail('teste@teste.com');
-    $teste->setSenha(12345678);
+    $teste = new Login("teste@teste.com", 12345678, "Teste Nome");
     $teste->Logar();
     echo '</br>';
     echo $teste->getEmail();
     echo '</br>';
     echo $teste->getSenha();
+    echo '</br>';
+    echo $teste->getNome();
 ?>
