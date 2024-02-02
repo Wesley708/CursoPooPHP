@@ -29,6 +29,7 @@
             $this->senha = $s;
         }
 
+
         public function Logar(){
             if ($this->email == 'teste@teste.com' && $this->senha == 12345678):
                 echo 'Logado com sucesso';
